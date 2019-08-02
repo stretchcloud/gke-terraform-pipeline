@@ -32,3 +32,23 @@ terraform init
 yes
 
 base64 ./creds/serviceaccount.json
+
+
+frontend - 
+
+export NEWSFEED_SERVICE_TOKEN="T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX"
+export NEWSFEED_SERVICE_URL=http://newsfeed:8080
+export QUOTE_SERVICE_URL=http://quotes:8080
+export STATIC_URL=""
+export APP_PORT=8080
+
+docker network create tw
+docker cp . 4c0583c4220d:/home/
+
+docker run -e APP_PORT=8080 -e STATIC_URL="" -e QUOTE_SERVICE_URL=http://quotes:8080 -e NEWSFEED_SERVICE_URL=http://newsfeed:8080 -e NEWSFEED_SERVICE_TOKEN="T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX" --name frontend -p 8082:8080 --network tw frontend:1.0
+
+docker run -e APP_PORT=8080 --name newsfeed -p 8081:8080 --network tw newsfeed:1.0
+
+docker run -e APP_PORT=8080 --name quotes -p 8080:8080 --network tw quotes:1.0
+
+

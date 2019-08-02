@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newsfeed
+  labels:
+    app: newsfeed
+spec: 
+  replicas: 1
+  template:
+    metadata:
+      name: newsfeed
+      labels:
+        app: newsfeed
+    spec:
+      containers:
+        - name: newsfeed-container
+          image: jit2600/newsfeed:latest
+          env:
+          - name: APP_PORT
+            value: "8080"
+
+  selector:
+    matchLabels: 
+      app: newsfeed
+
