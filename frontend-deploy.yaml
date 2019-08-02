@@ -25,7 +25,10 @@ spec:
           - name: STATIC_URL
             value: ""
           - name: NEWSFEED_SERVICE_TOKEN
-            value: "T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX"
+            valueFrom:
+              secretKeyRef:
+                name: servicetoken
+                key: token
 
   selector:
     matchLabels: 
