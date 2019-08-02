@@ -31,3 +31,4 @@ gsutil mb -c regional -l europe-west4 gs://nth-record-246512-tfstate
 terraform init
 yes
 
+base64 ./creds/serviceaccount.json
