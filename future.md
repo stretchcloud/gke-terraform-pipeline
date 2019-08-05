@@ -82,9 +82,8 @@ Also, for this pipeline, rather than using Jenkins's default UI, we will use [Bl
 
 
 
-Login to your Jenkins UI and navigate to **Manage Jenkins > Manage Plugins**. Click on **Available**, then type `blue ocean` on the Filter box.
-
-Select the **Blue Ocean** and click on **Install without restart**.
+1. Login to your Jenkins UI and navigate to **Manage Jenkins > Manage Plugins**. Click on **Available**, then type `blue ocean` on the Filter box.
+2. Select the **Blue Ocean** and click on **Install without restart**.
 
 
 
@@ -92,13 +91,10 @@ This should get the Blue Ocean pipeline plug-in installed.
 
 
 
-From the Jenkins UI, select **New Item** from the homepage. Specify that this item is a **Pipeline** and give it a name, then click **OK.**
-
-Scroll down to the Pipeline section, and select **Pipeline script from SCM**, then choose **Git** and enter your repository [URL](https://github.com/stretchcloud/twork). Then click **Save**.
-
-Select **Open Blue Ocean** from the menu on the left and Click **Run**.
-
-On the **Terraform Apply** stage, click on Approve. 
+1. From the Jenkins UI, select **New Item** from the homepage. Specify that this item is a **Pipeline** and give it a name, then click **OK.**
+2. Scroll down to the Pipeline section, and select **Pipeline script from SCM**, then choose **Git** and enter your repository [URL](https://github.com/stretchcloud/twork). Then click **Save**.
+3. Select **Open Blue Ocean** from the menu on the left and Click **Run**.
+4. On the **Terraform Apply** stage, click on Approve. 
 
 
 
@@ -154,13 +150,10 @@ $ git push origin master
 
 
 
-Go to the Jenkins UI.
-
-Select **Open Blue Ocean** from the left panel.
-
-Click on the **Pipeline**.
-
-Click on **Run**.
+1. Go to the Jenkins UI.
+2. Select **Open Blue Ocean** from the left panel.
+3. Click on the **Pipeline**.
+4. Click on **Run**.
 
 
 
@@ -170,11 +163,11 @@ It will spin up terraform pod on the kubernetes cluster and run git checkout to 
 
 
 
-It will run terraform init and terraform plan -out myplan. 
+5. It will run terraform init and terraform plan -out myplan. 
 
-At the approval stage, click on **Approve**.
+6. At the approval stage, click on **Approve**.
 
-It will apply the plan and retuen the output.
+7. It will apply the plan and retuen the output.
 
 
 
