@@ -47,7 +47,7 @@ Click **Add Container > Container Template** and use the following values:
 
 
 
-![img](/Users/prassark/thoughtworks/container-template.png)
+![img](https://github.com/stretchcloud/twork/blob/master/container-template.png)
 
 
 
@@ -166,7 +166,7 @@ Click on **Run**.
 
 It will spin up terraform pod on the kubernetes cluster and run git checkout to see a new commit.
 
-![image-20190805170343158](/Users/prassark/thoughtworks/pipeline.png)
+![image-20190805170343158](https://github.com/stretchcloud/twork/blob/master/pipeline.png)
 
 
 
