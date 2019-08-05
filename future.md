@@ -35,7 +35,7 @@ $ echo http://$SERVICE_IP:8080/login
 
 
 
-#### Configure Jenkins Server
+### Configure Jenkins Server
 
 
 
@@ -72,7 +72,7 @@ From the Jenkins UI, navigate to **Credentials > System > Global Credentials** t
 
 
 
-#### Create the Pipeline
+### Create the Pipeline
 
 Let's create a pipeline in Jenkins to manage and add future environment of GKE. 
 
