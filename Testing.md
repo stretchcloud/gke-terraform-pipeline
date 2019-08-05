@@ -1,12 +1,13 @@
 terraform init
-terraform apply "thoughtwork-clus-plan"
+terraform plan -out thoughtwork-clus-plan
 terraform apply "thoughtwork-clus-plan"
 gcloud container clusters get-credentials $(terraform output cluster_name) --zone=$(terraform output primary_zone)
 
 
 kubectl apply -f tiller-role.yaml
 helm init --service-account tiller
-helm install --name my-jk -f values.yaml stable/jenkins
+sleep 30
+helm install --name my-jk stable/jenkins
 
 
 NOTES:
@@ -52,3 +53,14 @@ docker run -e APP_PORT=8080 --name newsfeed -p 8081:8080 --network tw newsfeed:1
 docker run -e APP_PORT=8080 --name quotes -p 8080:8080 --network tw quotes:1.0
 
 
+kubectl create -f quotes-deploy.yaml
+kubectl create -f quotes-service.yaml 
+
+kubectl create -f newsfeed-deploy.yaml
+kubectl create -f newsfeed-service.yaml
+
+kubectl create -f secret.yaml
+kubectl create -f frontend-deploy.yaml
+kubectl create -f frontend-service.yaml 
+
+1.13.7-gke.8
