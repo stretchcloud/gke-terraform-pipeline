@@ -126,9 +126,13 @@ $ gsutil mb -c regional -l europe-west4 gs://nth-record-246512-tfstate
 
 
 
-Let's deploy the GKE using Terraform
+Let's deploy the GKE using Terraform, but before than that, you need to change the project variable value to your GCP project.
 
 ```bash
+$ vi provider.tf
+
+Change the Project Variable and save the file.
+
 $ terraform init
 $ terraform plan -out thoughtwork-clus-plan
 $ terraform apply "thoughtwork-clus-plan"
