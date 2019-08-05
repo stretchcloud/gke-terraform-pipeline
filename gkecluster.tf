@@ -42,31 +42,6 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   }
 }
 
-resource "google_container_node_pool" "extra-pool" {
-  name               = "extra-node-pool"
-  location              = "europe-west4-a"
-  cluster            = "${google_container_cluster.primary.name}"
-  initial_node_count = 1
-
-  node_config {
-    preemptible  = true
-    machine_type = "n1-standard-1"
-
-    metadata = {
-      disable-legacy-endpoints = "true"
-    }
-
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-      "https://www.googleapis.com/auth/servicecontrol",
-      "https://www.googleapis.com/auth/service.management.readonly",
-      "https://www.googleapis.com/auth/trace.append",
-      "https://www.googleapis.com/auth/devstorage.read_only",
-    ]
-  }
-
-}
 
 output "cluster_name" {
   value = "${google_container_cluster.primary.name}"
