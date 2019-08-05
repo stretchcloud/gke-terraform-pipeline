@@ -45,7 +45,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 resource "google_container_node_pool" "extra-pool" {
   name               = "extra-node-pool"
   location              = "europe-west4-a"
-  cluster            = "${google_container_cluster.gke-cluster.name}"
+  cluster            = "${google_container_cluster.primary.name}"
   initial_node_count = 1
 
   node_config {
