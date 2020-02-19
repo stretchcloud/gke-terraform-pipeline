@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket      = "nth-record-246512-tfstate"
+    bucket      = "projectname-tfstate"
     credentials = "./creds/serviceaccount.json"
   }
 }
